@@ -26,21 +26,6 @@ class ServiceProvider extends Module implements ServiceProviderInterface
             return $modules;
         });
 
-        $container->extend('router.collection', function ($routers, $c) {
-            $routers->add(
-                new DefaultRouter(
-                    'default',
-                    '(/)',
-                    [
-                        'module' => 'index',
-                        'controller' => 'index',
-                        'action' => 'index',
-                    ]
-                ));
-
-            return $routers;
-        });
-
         $container->extend('acl.routes', function ($acl, $c) {
             $acl->addRole('unauthenticated');
             $acl->allow('unauthenticated', 'index/', '*');

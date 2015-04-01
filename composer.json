@@ -2,7 +2,7 @@
     "name": "mendoframework/skeleton",
     "description": "Mendo MVC Framework Skeleton Application",
     "require": {
-        "mendoframework/mvc": "~0.1"
+        "mendoframework/mvc": "0.4.*"
     },
     "minimum-stability": "dev",
     "autoload": {
@@ -12,7 +12,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "0.2.x-dev"
+            "dev-master": "0.4.x-dev"
         }
     }
 }
