@@ -8,7 +8,12 @@ chdir(dirname(__DIR__));
 
 require './vendor/autoload.php';
 
-$registrar = new Mendo\Registrar\Registrar(new Mendo\Mvc\CompositionRoot());
-$registrar->register(getcwd().'/config/services');
+use Gobline\Application\Facade;
 
-new Mendo\Mvc\Bootstrap($registrar->getContainer());
+$app = new Facade();
+
+$app->getRegistrar()
+    ->register(getcwd().'/config/services.php')
+    ->register(getcwd().'/config/routes.php');
+
+$app->run();
